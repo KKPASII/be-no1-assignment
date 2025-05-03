@@ -12,15 +12,13 @@ public class CalculatorLv2 {
         switch(op) {
             case '+':
                 result = a+b;
-                resultList.add(result);
+
                 break;
             case '-':
                 result = a-b;
-                resultList.add(result);
                 break;
             case '*':
                 result = a*b;
-                resultList.add(result);
                 break;
             case '/':
                 if (b == 0) {
@@ -28,18 +26,22 @@ public class CalculatorLv2 {
                     throw new ArithmeticException("0으로 나눌 수 없음!!!");
                 }
                 result = a/b;
-                resultList.add(result);
                 break;
             default:
                 result = 0;
                 throw new IllegalArgumentException("연산할 수 없는 기호입니다 ㅇㅅㅇ");
         }
 
+        this.resultList.add(result);
         return result;
     }
 
     public List<Integer> getResultList() {
         return resultList;
+    }
+
+    public int getResultListSize() {
+        return resultList.size();
     }
 
     public void setResultList(List<Integer> resultList) {
